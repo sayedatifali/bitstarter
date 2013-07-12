@@ -6,7 +6,7 @@ var app = express.createServer(express.logger());
 var options = {'encoding': 'utf-8'};
 app.get('/', function(request, response) {
   var data = fs.readFileSync('index.html', options);
-  response.send(data.toString('utf-8');
+  response.send(data.toString('utf-8'));
 });
 
 var port = process.env.PORT || 5000;
