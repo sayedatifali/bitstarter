@@ -3,8 +3,9 @@ var fs = require('fs');
 
 var app = express.createServer(express.logger());
 
+var options = {'encoding': 'utf-8'};
 app.get('/', function(request, response) {
-  fs.readFileSync('index.html', ['utf-8'], function (err, data) {
+  fs.readFileSync('index.html', options, function (err, data) {
     if (err) throw err;
     response.send(data.toString('utf-8'));
   });
